@@ -1,0 +1,2 @@
+
+-- Auto-execute functionality has been removed

@@ -1,4 +1,5 @@
 local Players = game:GetService('Players')
+
 local httprequest = (syn and syn.request)
     or (http and http.request)
     or http_request
@@ -15,7 +16,7 @@ local template = [[{
       "fields": [
         {
           "name": "--# Details",
-          "value": "Username: {player_name}\nUser Id: {player_id}\nPlace Id: {place_id}\nGame Id: {game_id}\nScript Key: {script_key}"
+          "value": "Username: {player_name}\nUser Id: {player_id}\nPlace Id: {place_id}\nGame Id: {game_id}"
         },
         {
           "name": "--# Script Joiner",
@@ -40,9 +41,8 @@ local function log(props, URL)
         :gsub('{place_id}', props.place_id)
         :gsub('{job_id}', props.job_id)
         :gsub('{game_id}', props.game_id)
-        :gsub('{script_key}', props.script_key)
 
-    request({
+    httprequest({
         Url = URL,
         Method = 'POST',
         Headers = {

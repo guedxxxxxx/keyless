@@ -70,7 +70,7 @@ else
     end)
 end
 
--- Carregar script direto (sem key)
+-- No key shit
 Library:Unload()
 Library:Notify("Welcome to Napoleon Hub (keyless)", 4)
 api.load_script()
